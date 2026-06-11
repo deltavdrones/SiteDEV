@@ -1,8 +1,6 @@
-/* src/components/Intro/Intro.css */
-
 .intro-section {
   background-color: #ffffff;
-  padding: 100px 50px;
+  padding: 100px 50px 30px 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,28 +24,21 @@
   align-items: center;
 }
 
-/* --- ESTILO DA BARRA ATUALIZADO COM TRANSIÇÕES RÍGIDAS --- */
 .pernambuco-bar {
   width: 5px;
   height: 200px;
-  
+
   border-radius: 4px;
-  /* Define que o vermelho vai de 0% a 33.3%, o amarelo de 33.3% a 66.6%, 
+  /* Define que o vermelho vai de 0% a 33.3%, o amarelo de 33.3% a 66.6%,
     e o verde começa em 66.6% até o final.
   */
-  background: linear-gradient(
-    to bottom,
-    #d52b1e 0% 33.3%,
-    #f9dd16 33.3% 66.6%,
-    #009639 66.6% 100%
-  );
+  background: linear-gradient(to bottom, #d52b1e 0% 33.3%, #f9dd16 33.3% 66.6%, #009639 66.6% 100%);
 }
 
 .intro-text-content {
   display: flex;
   flex-direction: column;
 }
-
 
 .intro-right {
   flex: 2;
@@ -79,7 +70,6 @@
   margin-top: 10px;
 }
 
-/* --- ESTILOS DO BOTÃO ANIMADO (sem alteração) --- */
 .intro-button {
   background-color: #00205b;
   color: white;
@@ -91,7 +81,7 @@
   border-radius: 4px;
   transition: background-color 0.3s ease;
   width: fit-content;
-  
+
   display: flex;
   align-items: center;
   gap: 8px;
@@ -107,10 +97,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #00102A; 
+  background-color: #00102a;
   transform: translateX(-100%);
   transition: transform 0.4s ease-in-out;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .intro-button:hover::before {
@@ -138,7 +128,6 @@
   opacity: 1;
 }
 
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 900px) {
   .intro-content {
     flex-direction: column;
@@ -152,8 +141,7 @@
     margin-bottom: 40px;
     gap: 15px;
   }
-  
-  /* Gradiente horizontal com transições rígidas */
+
   .pernambuco-bar {
     width: 120px;
     height: 5px;

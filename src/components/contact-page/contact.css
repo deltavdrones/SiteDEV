@@ -1,8 +1,6 @@
-/* src/components/Contact/Contact.css */
-
 .contact-section {
   padding: 160px 50px 80px 50px;
-  background-color: #ffffff; /* Cor de fundo principal da referência */
+  background-color: #ffffff;
   color: #00205b;
   font-family: 'Sansation', sans-serif;
 }
@@ -16,7 +14,6 @@
   align-items: flex-start;
 }
 
-/* --- Lado Esquerdo: Informações --- */
 .contact-info {
   color: #333;
   display: flex;
@@ -59,7 +56,6 @@
   transform: scale(1.1);
 }
 
-/* --- Lado Direito: Formulário --- */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -72,7 +68,7 @@
   padding: 15px;
   border: none;
   border-radius: 4px;
-  background-color: #00205b; /* Fundo mais claro para os campos */
+  background-color: #00205b;
   color: #ffffff;
   font-size: 1rem;
   font-family: 'Sansation', sans-serif;
@@ -84,7 +80,6 @@
 }
 
 .form-submit-button {
-  /* Estilos base */
   background-color: #00205b;
   color: #ffffff;
   border: none;
@@ -95,12 +90,11 @@
   border-radius: 4px;
   width: fit-content;
 
-  /* Estilos para a animação (copiados e adaptados do Intro.css) */
   display: flex;
   align-items: center;
   gap: 8px;
-  position: relative; /* Essencial para o posicionamento do overlay */
-  overflow: hidden;   /* Esconde o overlay fora dos limites */
+  position: relative;
+  overflow: hidden;
   transition: color 0.4s ease-out;
 }
 
@@ -111,45 +105,37 @@
   left: 0;
   width: 100%;
   height: 100%;
-  
-  /* Cor do overlay (um azul um pouco mais claro para o efeito) */
-  background-color: #00102A; 
-  
-  /* Começa escondido à esquerda */
+
+  background-color: #00102a;
+
   transform: translateX(-100%);
-  
-  /* Animação de deslize */
+
   transition: transform 0.4s ease-in-out;
-  
-  /* Garante que o overlay fique atrás do texto */
-  z-index: 1; 
+
+  z-index: 1;
 }
 
-/* Efeito ao passar o mouse */
 .form-submit-button:hover::before {
   transform: translateX(0);
 }
 
-/* É necessário ter uma classe para o texto para ele ficar sobre a animação */
 .button-text {
   position: relative;
   z-index: 2;
-  transition: color 0.4s ease-out; /* Adiciona transição para a cor do texto */
+  transition: color 0.4s ease-out;
 }
 
-/* --- Media Query para Responsividade --- */
 @media (max-width: 900px) {
   .contact-container {
     grid-template-columns: 1fr;
     gap: 50px;
   }
-  
+
   .contact-section {
     padding: 60px 25px;
   }
 }
 
-/* --- Estilo para a mensagem de status do formulário --- */
 .form-status {
   margin-top: 20px;
   font-weight: bold;
@@ -161,13 +147,13 @@
 
 .form-status.success {
   font: Sansation, sans-serif;
-  background-color: #00205b; /* Fundo azul escuro para contraste */
-  color: #ffffff; /* Cor ciano para sucesso */
+  background-color: #00205b;
+  color: #ffffff;
 }
 
 .form-status.error {
-  background-color: #5c2323; /* Fundo vermelho escuro para contraste */
-  color: #ffaeae; /* Cor vermelha clara para erro */
+  background-color: #5c2323;
+  color: #ffaeae;
 }
 
 @media (max-width: 900px) {
@@ -175,11 +161,8 @@
     grid-template-columns: 1fr;
     gap: 50px;
   }
-  
-  .contact-section {
-    /* ANTES: padding: 60px 25px; */
 
-    /* DEPOIS: Ajuste o padding para dar mais espaço no topo em telas menores */
+  .contact-section {
     padding: 120px 25px 60px 25px;
   }
 }

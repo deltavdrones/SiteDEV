@@ -1,5 +1,3 @@
-/* src/components/Hero/Hero.css */
-
 .hero {
   display: flex;
   align-items: center;
@@ -7,8 +5,7 @@
   text-align: center;
   height: 100vh;
   color: white;
-  /* Corrigido: O caminho da imagem foi ajustado para ser relativo ao arquivo CSS. */
-  background: url('../../../assets/banner.jpg') no-repeat center center/cover;
+  background: url('../../../assets/home-page/banner.webp') no-repeat center center/cover;
   padding: 0 20px;
 }
 
@@ -27,7 +24,6 @@
   margin-bottom: 30px;
 }
 
-/* --- ESTILOS DO BOTÃO ANIMADO ATUALIZADO --- */
 .hero-button {
   background-color: #ffffff;
   color: white;
@@ -37,12 +33,11 @@
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
-  position: relative; /* Necessário para o posicionamento do overlay */
-  overflow: hidden;   /* Esconde o overlay fora dos limites do botão */
+  position: relative;
+  overflow: hidden;
   transition: color 0.4s ease-out;
 }
 
-/* Camada de fundo que desliza para dentro */
 .hero-button::before {
   content: '';
   position: absolute;
@@ -50,26 +45,20 @@
   left: 0;
   width: 100%;
   height: 100%;
-  
-  /* Cor mais escura para o efeito de hover */
-  background-color: hsl(220, 100%, 94%); 
-  
-  /* Começa escondido à esquerda */
+
+  background-color: hsl(220, 100%, 94%);
+
   transform: translateX(-100%);
-  
-  /* Anima o movimento de deslize */
+
   transition: transform 0.4s ease-in-out;
-  
-  /* Garante que o overlay fique atrás do texto */
-  z-index: 1; 
+
+  z-index: 1;
 }
 
-/* Efeito ao passar o mouse */
 .hero-button:hover::before {
   transform: translateX(0);
 }
 
-/* Classe para o texto do botão */
 .hero-button-text {
   color: #00205b;
   position: relative;

@@ -1,18 +1,16 @@
-// src/components/seletivo-page/SelectiveProcessPopup.jsx
-
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa';
-import { handleAnimationAndAction } from '../animation-handler';
 import './popup.css';
 
-// --- CONFIGURAÇÃO DO POP-UP AQUI ---
+import { FaTimes } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
+import { handleAnimationAndAction } from '../animation-handler';
+
 const popupConfig = {
   title: 'Processo Seletivo Aberto!',
   subtitle: 'Faça parte da nossa equipe e do nosso futuro.',
   content: `As inscrições para o processo seletivo da DeltaV estão abertas! Acreditamos que a engenharia tem o poder de transformar o futuro. Faça parte da primeira equipe de extensão de drones de Pernambuco.`,
   buttonText: 'MAIS INFORMAÇÕES',
-  buttonLink: '/seletivo'
+  buttonLink: '/seletivo',
 };
 
 const SelectiveProcessPopup = ({ onClose }) => {

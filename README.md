@@ -11,6 +11,7 @@ O projeto está hospedado neste [repositório do GitHub](https://github.com/Delt
 ### Estrutura do Repositório
 
 O projeto está organizado da seguinte forma:
+
 ```
 ├── src/                          # Código-fonte principal
 │   ├── components/               # Componentes React reutilizáveis
@@ -27,7 +28,6 @@ O projeto está organizado da seguinte forma:
 │   └── assets/                   # Imagens, ícones e arquivos de mídia
 ├── public/                       # Arquivos estáticos (como index.html)
 ├── psd/                          # Arquivos de design (.psd) e fluxograma
-├── timeAPI/                      # API para hora exata do servidor
 ├── .gitignore                    # Arquivos e pastas ignorados pelo Git
 ├── eslint.config.js              # Configuração do ESLint
 ├── package.json                  # Dependências e scripts do projeto
@@ -39,9 +39,8 @@ O projeto está organizado da seguinte forma:
 
 ### Tecnologias Utilizadas
 
-* **React**: Biblioteca para a interface do usuário.
-* **Vite**: Ferramenta de build otimizada para desenvolvimento rápido.
-* **React Router DOM**: Gerenciamento de navegação entre páginas.
-* **Formspree**: Serviço para o formulário de contato.
-* **Vercel API**: Utilizada para fornecer a hora exata do servidor para a página de "Em Breve".
-* **Google Analytics**: Ferramenta para monitoramento de tráfego.
+- **React**: Biblioteca para a interface do usuário.
+- **Vite**: Ferramenta de build otimizada para desenvolvimento rápido.
+- **React Router DOM**: Gerenciamento de navegação entre páginas.
+- **Formspree**: Serviço para o formulário de contato.
+- **Google Analytics**: Ferramenta para monitoramento de tráfego.

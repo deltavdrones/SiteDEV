@@ -1,11 +1,11 @@
-// src/components/Header/Header.jsx
-
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { handleAnimationAndAction } from '../utils/animation-handler';
 import './header.css';
+
+import { useEffect, useState } from 'react';
+import { FaBars, FaHome, FaTimes } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 import logoDeltaV from '../../assets/logos/logo.webp';
-import { FaBars, FaTimes, FaHome } from 'react-icons/fa';
+import { handleAnimationAndAction } from '../utils/animation-handler';
 
 const Header = () => {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -14,8 +14,11 @@ const Header = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Adicionada a página de projetos à lógica do header
-    if (['/sobre', '/contato', '/seletivo', '/exposicoes', '/projetos', '/competicoes'].includes(pathname)) { // <<< ADICIONADO '/sobre'
+    if (
+      ['/sobre', '/contato', '/seletivo', '/exposicoes', '/projetos', '/competicoes'].includes(
+        pathname
+      )
+    ) {
       setScrolled(true);
       return;
     }
@@ -38,7 +41,6 @@ const Header = () => {
       if (isRouterLink) {
         navigate(to);
       } else {
-        // Para links de âncora na mesma página (se houver)
         window.location.href = to;
       }
     };
@@ -58,18 +60,46 @@ const Header = () => {
         onClick={toggleMenu}
         aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
       >
-        <span className={`icon-wrapper ${menuAberto ? 'hidden' : 'visible'}`}><FaBars /></span>
-        <span className={`icon-wrapper ${menuAberto ? 'visible' : 'hidden'}`}><FaTimes /></span>
+        <span className={`icon-wrapper ${menuAberto ? 'hidden' : 'visible'}`}>
+          <FaBars />
+        </span>
+        <span className={`icon-wrapper ${menuAberto ? 'visible' : 'hidden'}`}>
+          <FaTimes />
+        </span>
       </button>
 
       <nav id="nav-links-mobile" className={`nav-container ${menuAberto ? 'aberto' : ''}`}>
         <ul className="nav-links">
-          <li><Link to="/sobre" onClick={(e) => handleLinkClick(e, '/sobre', true)}>Quem Somos</Link></li>
-          <li><Link to="/competicoes" onClick={(e) => handleLinkClick(e, '/competicoes', true)}>Competições</Link></li>
-          <li><Link to="/exposicoes" onClick={(e) => handleLinkClick(e, '/exposicoes', true)}>Exposições</Link></li>
-          <li><Link to="/projetos" onClick={(e) => handleLinkClick(e, '/projetos', true)}>Projetos</Link></li>
-          <li><Link to="/seletivo" onClick={(e) => handleLinkClick(e, '/seletivo', true)}>Processo Seletivo</Link></li>
-          <li><Link to="/contato" onClick={(e) => handleLinkClick(e, '/contato', true)}>Contato</Link></li>
+          <li>
+            <Link to="/sobre" onClick={(e) => handleLinkClick(e, '/sobre', true)}>
+              Quem Somos
+            </Link>
+          </li>
+          <li>
+            <Link to="/competicoes" onClick={(e) => handleLinkClick(e, '/competicoes', true)}>
+              Competições
+            </Link>
+          </li>
+          <li>
+            <Link to="/exposicoes" onClick={(e) => handleLinkClick(e, '/exposicoes', true)}>
+              Exposições
+            </Link>
+          </li>
+          <li>
+            <Link to="/projetos" onClick={(e) => handleLinkClick(e, '/projetos', true)}>
+              Projetos
+            </Link>
+          </li>
+          <li>
+            <Link to="/seletivo" onClick={(e) => handleLinkClick(e, '/seletivo', true)}>
+              Processo Seletivo
+            </Link>
+          </li>
+          <li>
+            <Link to="/contato" onClick={(e) => handleLinkClick(e, '/contato', true)}>
+              Contato
+            </Link>
+          </li>
           <li className="home-link-item">
             <Link to="/" onClick={(e) => handleLinkClick(e, '/', true)}>
               <FaHome aria-label="Início" className="home-icon" />

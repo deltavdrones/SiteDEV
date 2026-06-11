@@ -1,34 +1,26 @@
-// src/App.jsx
-import React, { useState, useEffect } from 'react'; // Adicionado "useState"
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { setupGoogleAnalytics } from './components/utils/analytics.jsx';
-
-import Header from './components/header/header.jsx';
-import Footer from './components/footer/footer.jsx';
-import ScrollToTop from './components/utils/scroll-to-top.jsx';
-import ComingSoon from './components/utils/coming-soon/coming-soon.jsx';
-import Popup from './components/utils/popup/popup.jsx';
-import useLaunchTimer from './components/utils/timer.jsx';
-import logoIcon from './assets/logos/icon.webp';
 import './App.css';
 
+import React, { lazy, Suspense, useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
+import Footer from './components/footer/footer.jsx';
+import Header from './components/header/header.jsx';
+import { setupGoogleAnalytics } from './components/utils/analytics.jsx';
+import Popup from './components/utils/popup/popup.jsx';
+import ScrollToTop from './components/utils/scroll-to-top.jsx';
 import Home from './Home';
-import Contact from './components/contact-page/contact.jsx';
-import Seletivo from './components/seletivo-page/seletivo.jsx';
-import Exposicoes from './components/exposicoes-page/exposicoes.jsx';
-import Projetos from './components/projetos-page/projetos.jsx';
-import Competicoes from './components/competicoes-page/competicoes.jsx';
-import Sobre from './components/sobre-page/sobre.jsx';
+
+const Competicoes = lazy(() => import('./components/competicoes-page/competicoes.jsx'));
+const Contact = lazy(() => import('./components/contact-page/contact.jsx'));
+const Exposicoes = lazy(() => import('./components/exposicoes-page/exposicoes.jsx'));
+const Projetos = lazy(() => import('./components/projetos-page/projetos.jsx'));
+const Seletivo = lazy(() => import('./components/seletivo-page/seletivo.jsx'));
+const Sobre = lazy(() => import('./components/sobre-page/sobre.jsx'));
 
 const isPopupEnabled = false;
 
 function App() {
-  // Data de lançamento do site IMPORTANTE!!!!!
-  const targetLaunchDate = '2025-08-11T10:00:00';
-  
   const [showPopup, setShowPopup] = useState(false);
-  const [hasBypassed, setHasBypassed] = useState(false); // NOVO ESTADO
   const location = useLocation();
 
   useEffect(() => {
@@ -41,60 +33,41 @@ function App() {
         page_path: location.pathname + location.search,
       });
     }
+
+    const handleLaunch = () => {
+      if (!isPopupEnabled || location.pathname !== '/') {
+        return;
+      }
+
+      const lastClosedTime = localStorage.getItem('lastPopupClosedTime');
+      const fiveMinutesInMs = 5 * 60 * 1000;
+      if (!lastClosedTime || Date.now() - parseInt(lastClosedTime, 10) > fiveMinutesInMs) {
+        setTimeout(() => setShowPopup(true), 1000);
+      }
+    };
+    handleLaunch();
   }, [location.pathname, location.search]);
-  
-  const handleLaunch = () => {
-    if (!isPopupEnabled || location.pathname !== '/') {
-      return; 
-    }
-
-    const lastClosedTime = localStorage.getItem('lastPopupClosedTime');
-    const fiveMinutesInMs = 5 * 60 * 1000;
-    if (!lastClosedTime || (Date.now() - parseInt(lastClosedTime, 10) > fiveMinutesInMs)) {
-      setTimeout(() => setShowPopup(true), 1000);
-    }
-  };
-
-  const { isLoading, isLaunched, initialSeconds } = useLaunchTimer(targetLaunchDate, handleLaunch);
 
   const handleClosePopup = () => {
     setShowPopup(false);
     localStorage.setItem('lastPopupClosedTime', Date.now().toString());
   };
 
-  if (isLoading) {
-    return (
-      <div className="loading-container">
-        <img src={logoIcon} alt="Carregando..." className="loading-logo" />
-      </div>
-    );
-  }
-  
-  // LÓGICA ATUALIZADA: permite ver o site se for lançado OU se a senha for digitada
-  if (!isLaunched && !hasBypassed) {
-    return (
-      <ComingSoon
-        initialSeconds={initialSeconds}
-        targetLaunchDate={targetLaunchDate}
-        onLaunch={() => {}}
-        onBypass={() => setHasBypassed(true)} // NOVA PROP
-      />
-    );
-  }
-
   return (
-    <div className="App">
+    <div className="App flex flex-col min-h-screen">
       <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/contato" element={<Contact />} />
-          <Route path="/seletivo" element={<Seletivo />} />
-          <Route path="/exposicoes" element={<Exposicoes />} />
-          <Route path="/projetos" element={<Projetos />} />
-          <Route path="/competicoes" element={<Competicoes />} />
-        </Routes>
+      <main className="flex-grow">
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Carregando...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/contato" element={<Contact />} />
+            <Route path="/seletivo" element={<Seletivo />} />
+            <Route path="/exposicoes" element={<Exposicoes />} />
+            <Route path="/projetos" element={<Projetos />} />
+            <Route path="/competicoes" element={<Competicoes />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
       {showPopup && <Popup onClose={handleClosePopup} />}

@@ -1,25 +1,22 @@
-// src/components/Contactpage/Contact/Contact.jsx
-
-import React, { useState } from 'react';
 import './contact.css';
-// Ícone do GitHub importado
-import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+
+import { useState } from 'react';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
   const [status, setStatus] = useState('');
 
-  // --- FUNÇÃO DE ENVIO CORRIGIDA PARA USAR FORMSPREE ---
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Enviando...');
-    
+
     try {
-      const response = await fetch("https://formspree.io/f/xkgzvoya", {
+      const response = await fetch('https://formspree.io/f/xkgzvoya', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -38,66 +35,79 @@ const Contact = () => {
       setStatus('Ocorreu um erro ao enviar. Tente manualmente via email.');
     }
   };
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   return (
     <section id="contato" className="contact-section">
       <div className="contact-container">
-        {/* Coluna da Esquerda: Informações de Contato */}
         <div className="contact-info">
           <h2 className="contact-title">CONTATO</h2>
-          <p>Escola Politécnica de Pernambuco (POLI/UPE)<br/>
+          <p>
+            Escola Politécnica de Pernambuco (POLI/UPE)
+            <br />
             R. Benfica, 455 - Madalena, Recife - PE
             <br />
             CEP: 50720-001
           </p>
-          <p className="contact-email">
-            deltav.quad@poli.br
-          </p>
-          
+          <p className="contact-email">deltav.quad@poli.br</p>
+
           <div className="contact-social-links">
-            <a href="https://www.instagram.com/deltav.drones/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/deltav.drones/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <FaInstagram />
             </a>
-            <a href="https://www.linkedin.com/company/deltavaerospace/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/company/deltavaerospace/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <FaLinkedin />
             </a>
-            <a href="https://github.com/DeltaVquad" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a
+              href="https://github.com/DeltaVquad"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
               <FaGithub />
             </a>
           </div>
         </div>
 
-        {/* Coluna da Direita: Formulário */}
         <div className="contact-form-container">
           <form className="contact-form" onSubmit={handleSubmit}>
-            <input 
-              type="text" 
-              name="name" 
-              placeholder="Nome" 
+            <input
+              type="text"
+              name="name"
+              placeholder="Nome"
               value={formData.name}
               onChange={handleChange}
-              required 
+              required
             />
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="Email" 
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              required 
+              required
             />
-            <textarea 
-              name="message" 
-              placeholder="Adicione uma mensagem" 
-              rows="5" 
+            <textarea
+              name="message"
+              placeholder="Adicione uma mensagem"
+              rows="5"
               value={formData.message}
               onChange={handleChange}
               required

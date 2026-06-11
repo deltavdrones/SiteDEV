@@ -1,24 +1,22 @@
-/* src/components/Blocks/Blocks.css (Código Atualizado) */
-
 .blocks-section {
   width: 100%;
-  /* Adiciona um padding e um fundo branco para criar o espaçamento */
+
   padding: 30px;
   background-color: #ffffff;
-  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+  box-sizing: border-box;
 }
 
 .blocks-grid {
   display: grid;
-  /* Altera para 2 colunas, como na nova imagem de referência */
+
   grid-template-columns: repeat(2, 1fr);
-  /* Adiciona o espaçamento branco entre os blocos */
+
   gap: 25px;
 }
 
 .block-item {
   position: relative;
-  height: 400px; /* Altura ajustada para ficar mais parecida com a imagem */
+  height: 400px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -29,19 +27,20 @@
   transition: transform 0.4s ease;
 }
 
-/* Camada escura sobre a imagem */
 .block-item::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   transition: background-color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse */
 .block-item:hover {
-  transform: scale(1.03); /* Efeito de zoom sutil */
+  transform: scale(1.03);
   z-index: 5;
 }
 
@@ -68,10 +67,9 @@
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
-  align-self: flex-start; /* Adicionado para que o título não ocupe 100% da largura */
+  align-self: flex-start;
 }
 
-/* --- ANIMAÇÃO DA LINHA --- */
 .block-title::after {
   content: '';
   position: absolute;
@@ -89,16 +87,12 @@
   transform: scaleX(1);
 }
 
-
 .block-link {
   font-size: 1.1rem;
   font-weight: bold;
-  align-self: flex-end; /* Mantenha esta linha como estava */
+  align-self: flex-end;
 }
 
-/* --- Layout Responsivo --- */
-
-/* Em telas de celular, os blocos ficarão um abaixo do outro */
 @media (max-width: 768px) {
   .blocks-grid {
     grid-template-columns: 1fr;
