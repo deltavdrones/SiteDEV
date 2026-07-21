@@ -59,7 +59,6 @@ const loganHistory = [
       'OpenCV',
       'Pixhawk 6C PRO',
       'Ansys Mechanical',
-      '',
       'Softwares proprietários da DeltaV',
     ],
     imagem: imgLoganV2,
@@ -76,7 +75,7 @@ const loganHistory = [
     tag: 'Próxima Evolução',
     highlight: 'Novos desafios e aprendizados',
     description:
-      'A equipe se prepara para a próxima evolução do Logan, focando em missões autônomas mais complexasnpm run . O objetivo é superar os limites atuais e alcançar novos patamares de desempenho e capacidade.',
+      'A equipe se prepara para a próxima evolução do Logan, focando em missões autônomas mais complexas. O objetivo é superar os limites atuais e alcançar novos patamares de desempenho e capacidade.',
     tecnologias: ['...'],
     imagem: imgLoganV3,
     conquistas: ['...'],

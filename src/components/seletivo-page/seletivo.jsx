@@ -3,9 +3,9 @@ import './seletivo.css';
 import { handleAnimationAndAction } from '../utils/animation-handler';
 
 const Seletivo = () => {
-  const inscriptionLink = 'https://forms.gle/2bmosPNKtzEshQQS9';
+  const inscriptionLink = 'https://forms.gle/pdwaJBXRN7u5LJYp8';
   const editalLink =
-    'https://drive.google.com/file/d/1OH65NQcs6KkRVW5O_A9kRWkT2cSM5wxO/view?usp=sharing';
+    'https://drive.google.com/file/d/1rAGmZHlBaEHs4ykjkH50fXJdkWZMs6L4/view?usp=sharing';
 
   const handleInscriptionClick = (e) => {
     handleAnimationAndAction(e, () => window.open(inscriptionLink, '_blank'));

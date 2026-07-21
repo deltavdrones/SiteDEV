@@ -1,0 +1,155 @@
+.supporters-section {
+  width: 100%;
+  padding: 24px 20px 36px;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+  box-sizing: border-box;
+}
+
+.supporters-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.supporters-label {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0a1442;
+}
+
+.supporters-marquee {
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(10, 20, 66, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 30px rgba(10, 20, 66, 0.06);
+  padding: 16px 0;
+  position: relative;
+
+  /* Esmaece as bordas para o loop entrar/sair de forma suave,
+     em vez de "cortar" os cards de repente. */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.supporters-marquee--dragging {
+  cursor: grabbing;
+}
+
+.supporters-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Pausa a animação ao passar o mouse ou focar (acessibilidade via teclado),
+   permitindo que o usuário leia/clique com calma. */
+.supporters-marquee:hover .supporters-track,
+.supporters-track:focus-within {
+  animation-play-state: paused;
+}
+
+.supporters-group {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  padding: 0 8px;
+}
+
+.supporter-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 140px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(10, 20, 66, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(10, 20, 66, 0.06);
+}
+
+.supporter-logo-frame {
+  width: calc(var(--supporter-zoom, 100) * 1%);
+  height: calc(var(--supporter-zoom, 100) * 1%);
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.supporter-card:hover,
+.supporter-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(10, 20, 66, 0.12);
+}
+
+.supporter-card:focus-visible {
+  outline: 2px solid #0a1442;
+  outline-offset: 2px;
+}
+
+.supporter-logo {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.supporter-card:hover .supporter-logo-frame,
+.supporter-card:focus-visible .supporter-logo-frame {
+  transform: scale(1.03);
+}
+
+/* Respeita usuários que preferem menos movimento na tela. */
+@media (prefers-reduced-motion: reduce) {
+  .supporters-track {
+    transition: none;
+  }
+
+  .supporters-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .supporters-group[aria-hidden='true'] {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .supporters-section {
+    padding: 18px 14px 28px;
+  }
+
+  .supporters-group {
+    gap: 12px;
+    padding: 0 6px;
+  }
+
+  .supporter-card {
+    width: 120px;
+    height: 110px;
+    padding: 12px;
+  }
+}

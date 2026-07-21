@@ -17,7 +17,7 @@ const Projetos = lazy(() => import('./components/projetos-page/projetos.jsx'));
 const Seletivo = lazy(() => import('./components/seletivo-page/seletivo.jsx'));
 const Sobre = lazy(() => import('./components/sobre-page/sobre.jsx'));
 
-const isPopupEnabled = false;
+const isPopupEnabled = true;
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -57,7 +57,11 @@ function App() {
     <div className="App flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Carregando...</div>}>
+        <Suspense
+          fallback={
+            <div className="flex items-center justify-center min-h-screen">Carregando...</div>
+          }
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sobre" element={<Sobre />} />
