@@ -48,7 +48,7 @@ const Footer = () => {
           <h4 className="footer-title">Siga-nos</h4>
           <div className="social-links">
             <a
-              href="https://www.instagram.com/deltav.drones/"
+              href="https://www.instagram.com/deltavdrones/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -56,7 +56,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://www.linkedin.com/company/deltavaerospace/"
+              href="https://www.linkedin.com/company/deltavdrones/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -64,7 +64,7 @@ const Footer = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://github.com/DeltaVquad"
+              href="https://github.com/deltavdrones"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
