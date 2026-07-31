@@ -183,3 +183,29 @@
     display: none;
   }
 }
+
+@media (max-width: 900px) {
+  .header {
+    padding: 12px 18px;
+  }
+
+  .header.scrolled {
+    padding: 10px 18px;
+  }
+
+  .logo {
+    height: 44px;
+  }
+
+  .header.scrolled .logo {
+    height: 36px;
+  }
+
+  .nav-links a {
+    font-size: 1.2em;
+  }
+
+  .nav-links li {
+    margin: 16px 0;
+  }
+}

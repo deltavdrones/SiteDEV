@@ -108,3 +108,64 @@
     font-size: 2.2rem;
   }
 }
+
+@media (max-width: 900px) {
+  .blocks-section {
+    padding: 18px;
+  }
+
+  .blocks-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .block-item {
+    height: auto;
+    min-height: 240px;
+    padding: 22px;
+  }
+
+  .block-title {
+    font-size: clamp(1.7rem, 5vw, 2.4rem);
+  }
+
+  .block-link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .blocks-section {
+    padding: 12px;
+  }
+
+  .blocks-grid {
+    gap: 10px;
+  }
+
+  .block-item {
+    min-height: 160px;
+    height: 160px;
+    padding: 16px;
+    border-radius: 0px;
+  }
+
+  .block-content {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .block-title {
+    font-size: 1.5rem;
+    padding-bottom: 6px;
+    max-width: 10ch;
+  }
+
+  .block-title::after {
+    height: 2px;
+  }
+
+  .block-link {
+    display: none;
+  }
+}

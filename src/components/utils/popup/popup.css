@@ -155,3 +155,24 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 900px) {
+  .popup-container {
+    width: min(92vw, 560px);
+    padding: 28px 22px;
+    border-radius: 10px;
+  }
+
+  .popup-title {
+    font-size: clamp(1.7rem, 5vw, 2rem);
+  }
+
+  .popup-content p {
+    font-size: 1rem;
+  }
+
+  .sp-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}

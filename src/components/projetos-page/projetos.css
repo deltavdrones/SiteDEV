@@ -646,5 +646,101 @@
   .kwid-title {
     font-size: 2.4rem;
   }
+}
 
+@media (max-width: 900px) {
+  .projetos-section {
+    padding: 110px 20px 56px;
+    min-height: auto;
+  }
+
+  .projetos-glow-bg {
+    width: 320px;
+    height: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6%;
+  }
+
+  .projetos-header {
+    margin-bottom: 48px;
+  }
+
+  .projetos-title {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    letter-spacing: 1px;
+  }
+
+  .projetos-subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .section-label {
+    gap: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+  }
+
+  .logan-showcase-section,
+  .kwid-showcase-section {
+    margin-bottom: 72px;
+  }
+
+  .logan-interactive-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .logan-timeline-container {
+    padding: 0 8px;
+    margin-bottom: 36px;
+  }
+
+  .timeline-bar {
+    left: 8px;
+    right: 8px;
+  }
+
+  .logan-content-grid,
+  .kwid-card-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .logan-info-header {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .logan-info-title,
+  .kwid-title {
+    font-size: clamp(1.9rem, 6vw, 2.5rem);
+  }
+
+  .logan-info-year,
+  .kwid-subtitle {
+    font-size: 1rem;
+  }
+
+  .logan-info-description,
+  .kwid-description {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .kwid-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .kwid-specs-glass-card {
+    padding: 20px;
+  }
+
+  .glass-spec-td-label,
+  .glass-spec-td-val {
+    font-size: 0.85rem;
+  }
 }

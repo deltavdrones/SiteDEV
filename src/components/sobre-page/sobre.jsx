@@ -60,28 +60,28 @@ const teamMembers = [
     depts: ['controle'],
   },
 
-  // Sistemas e Sensores
+  // Sistemas Embarcados
   {
     name: 'Gilvan Neto',
-    role: 'Líder de Sistemas e Sensores',
+    role: 'Líder de Sistemas Embarcados',
     photo: gilvan,
     depts: ['sistemas'],
   },
   {
     name: 'Luana Almeida',
-    role: 'Membro de Sistemas e Sensores\n Membro de Controle',
+    role: 'Membro de Sistemas Embarcados',
     photo: luana,
-    depts: ['sistemas', 'controle'],
+    depts: ['sistemas'],
   },
   {
     name: 'Lucas Chaves',
-    role: 'Membro de Sistemas e Sensores',
+    role: 'Membro de Sistemas Embarcados',
     photo: lucas,
     depts: ['sistemas'],
   },
   {
     name: 'Victor Pinheiro',
-    role: 'Membro de Sistemas e Sensores',
+    role: 'Membro de Sistemas Embarcados',
     photo: victor,
     depts: ['sistemas'],
   },
@@ -108,7 +108,7 @@ const departments = [
   { id: 'all', name: 'Todos' },
   { id: 'lideranca', name: 'Orientação & Capitania' },
   { id: 'estruturas', name: 'Estrutura & Desempenho' },
-  { id: 'sistemas', name: 'Sistemas & Sensores' },
+  { id: 'sistemas', name: 'Sistemas Embarcados' },
   { id: 'software', name: 'Software & Navegação' },
   { id: 'marketing', name: 'Marketing' },
 ];

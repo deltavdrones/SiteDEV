@@ -133,13 +133,19 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 28px;
+  }
+
+  .intro-section {
+    padding: 50px 22px 24px;
   }
 
   .intro-left {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
-    gap: 15px;
+    margin-bottom: 0;
+    gap: 14px;
+    max-width: 100%;
   }
 
   .pernambuco-bar {
@@ -157,7 +163,29 @@
     align-items: center;
   }
 
+  .intro-right {
+    max-width: 100%;
+  }
+
+  .intro-title {
+    font-size: clamp(2rem, 6vw, 2.7rem);
+  }
+
+  .intro-subtitle {
+    margin-top: 8px;
+    margin-bottom: 18px;
+    font-size: 0.8rem;
+  }
+
   .intro-description {
-    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: left;
+  }
+
+  .intro-button {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
 }

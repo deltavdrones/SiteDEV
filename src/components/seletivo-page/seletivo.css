@@ -115,7 +115,27 @@
 
 @media (max-width: 900px) {
   .selective-process-section {
-    padding: 120px 25px 60px 25px;
+    padding: 110px 22px 54px;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .selective-process-container {
+    gap: 24px;
+  }
+
+  .selective-process-title {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+  }
+
+  .selective-process-subtitle {
+    font-size: 1rem;
+  }
+
+  .selective-process-content p {
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: left;
   }
 }
 

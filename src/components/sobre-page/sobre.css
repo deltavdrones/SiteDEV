@@ -298,3 +298,50 @@
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 900px) {
+  .sobre-section {
+    padding: 110px 22px 56px;
+    min-height: auto;
+  }
+
+  .sobre-intro-grid {
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+
+  .sobre-description {
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: left;
+  }
+
+  .sobre-title,
+  .structure-title,
+  .members-title {
+    font-size: clamp(2rem, 6vw, 2.6rem);
+  }
+
+  .structure-cta {
+    margin-bottom: 56px;
+  }
+
+  .team-structure-section {
+    margin-bottom: 40px;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .member-card {
+    padding: 16px;
+  }
+
+  .member-photo,
+  .member-photo-placeholder {
+    width: 104px;
+    height: 104px;
+  }
+}
