@@ -17,7 +17,7 @@ const Projetos = lazy(() => import('./components/projetos-page/projetos.jsx'));
 const Seletivo = lazy(() => import('./components/seletivo-page/seletivo.jsx'));
 const Sobre = lazy(() => import('./components/sobre-page/sobre.jsx'));
 
-const isPopupEnabled = true;
+const isPopupEnabled = false;
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
