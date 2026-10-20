@@ -1,4 +1,4 @@
-import './Intro.css';
+import './intro.css';
 
 import { useNavigate } from 'react-router-dom';
 

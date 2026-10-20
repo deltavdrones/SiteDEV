@@ -1,4 +1,4 @@
-import './Hero.css';
+import './hero.css';
 
 import bgImage from '../../../assets/home-page/banner.webp';
 import { handleAnimationAndAction } from '../../utils/animation-handler';

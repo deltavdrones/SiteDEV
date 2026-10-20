@@ -19,6 +19,11 @@ import lucas from '../../assets/sobre-page/membros/lucas.webp';
 import pedro from '../../assets/sobre-page/membros/pedro.webp';
 import soares from '../../assets/sobre-page/membros/soares.webp';
 import victor from '../../assets/sobre-page/membros/victor.webp';
+import gabriel from '../../assets/sobre-page/membros/gabriel.webp';
+import grazielle from '../../assets/sobre-page/membros/grazielle.webp';
+import jv from '../../assets/sobre-page/membros/jv.webp';
+import luan from '../../assets/sobre-page/membros/luan.webp';
+import sofia from '../../assets/sobre-page/membros/sofia.webp';
 import teamImage from '../../assets/sobre-page/sobre.webp';
 
 const teamMembers = [
@@ -42,7 +47,13 @@ const teamMembers = [
     depts: ['visao'],
   },
   {
-    name: 'Isabella Vitória ',
+    name: 'Grazielle Macêdo',
+    role: 'Membro de Visão Computacional & Parcerias e Marketing',
+    photo: grazielle,
+    depts: ['visao', 'mareting'],
+  },
+  {
+    name: 'Isabella Vitória',
     role: 'Membro de Visão Computacional',
     photo: isabella,
     depts: ['visao'],
@@ -59,12 +70,23 @@ const teamMembers = [
     photo: leonardo,
     depts: ['controle'],
   },
-
+  {
+    name: 'Sofia Motta',
+    role: 'Membro de Controle',
+    photo: sofia,
+    depts: ['controle'],
+  },
   // Sistemas Embarcados
   {
     name: 'Gilvan Neto',
     role: 'Líder de Sistemas Embarcados',
     photo: gilvan,
+    depts: ['sistemas'],
+  },
+  {
+    name: 'João Vitor',
+    role: 'Membro de Sistemas Embarcados',
+    photo: jv,
     depts: ['sistemas'],
   },
   {
@@ -99,9 +121,24 @@ const teamMembers = [
     photo: soares,
     depts: ['estruturas'],
   },
-
+  {
+    name: 'Gabriel Cezário',
+    role: 'Membro de Estrutura e Desempenho & Parcerias e Marketing',
+    photo: gabriel,
+    depts: ['estruturas', 'marketing'],
+  },
+  {
+    name: 'Luan José',
+    role: 'Membro de Estrutura e Desempenho & Parcerias e Marketing',
+    photo: luan,
+    depts: ['estruturas', 'marketing'],
+  },
   // Marketing
-  { name: 'Amanda Gabriellen', role: 'Líder de Marketing', photo: amanda, depts: ['marketing'] },
+  {
+    name: 'Amanda Gabriellen',
+    role: 'Líder de Parcerias e Marketing',
+    photo: amanda, depts: ['marketing']
+  },
 ];
 
 const departments = [
